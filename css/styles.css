@@ -1,3 +1,56 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot?-sj2raz');
+	src:url('fonts/icomoon.eot?#iefix-sj2raz') format('embedded-opentype'),
+		url('fonts/icomoon.woff?-sj2raz') format('woff'),
+		url('fonts/icomoon.ttf?-sj2raz') format('truetype'),
+		url('fonts/icomoon.svg?-sj2raz#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('fonts/OpenSans-Regular-webfont.eot');
+    src: url('fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans-Regular-webfont.woff') format('woff'),
+         url('fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.icon-star:before {
+	content: "\f005";
+}
+
+.icon-pencil:before {
+	content: "\f040";
+}
+
+.icon-arrow-up:before {
+	content: "\f0aa";
+}
+
+.icon-arrow-down:before {
+	content: "\f0ab";
+}
+
 a
 {
 	color: #22BCE0;
@@ -5,7 +58,7 @@ a
 body
 {
 	background: #EEEEEE;
-	font-family: Arial;
+	font-family: 'Open Sans','open_sansregular', sans-serif;
 	font-size: 16px;
 }
 footer
@@ -70,8 +123,9 @@ header #logo img
 }
 nav
 {
-	background: #80BCA3;
+	background: #F4502A;
 	position: relative;
+	padding-right: 5em;
 }
 nav ul
 {
@@ -91,6 +145,11 @@ nav ul li a
 	padding: 0.5em;
 	text-decoration: none;
 }
+
+nav ul li a:hover{
+	background: #22BCE0;
+}
+
 nav ul #pubicar_nav
 {
 	position: absolute;
@@ -108,6 +167,15 @@ nav ul #pubicar_nav a
 	text-decoration: none;
 	font-style: italic;
 	text-shadow: rgba(0,0,0,0.5) 2px 2px 5px;
+}
+
+nav ul #pubicar_nav a:hover{
+	background: #F4502A;
+}
+
+
+nav ul #pubicar_nav a:before{
+	padding-right: 0.5em;
 }
 
 #contenido
@@ -176,8 +244,54 @@ nav ul #pubicar_nav a
 	right: 3%;
 	top: 100%;
 }
+
+#contenido .item .votacion a{
+	text-decoration: none;
+}
+
+
 #contenido .item .votacion .comentarios_item,
 #contenido .item .votacion .guardar_item
 {
 	float: right;
+	text-decoration: none;
+}
+
+
+#contenido .item .votacion .up,
+#contenido .item .votacion .down
+{
+	text-decoration: none;
+}
+
+#contenido .item .votacion .guardar_item
+{
+	color: yellow;
+}
+
+#contenido .item .votacion .up{
+	color: red;	
+}
+
+#contenido .item .votacion .down
+{
+	color: green;
+}
+
+@media screen and (min-width: 800px){
+
+	#contenido{
+		overflow: hidden;
+	}
+
+	#contenido .item{
+		width: 48%;
+		float: left;
+		
+	}
+
+	#contenido .item:nth-child(odd){
+		margin-right: 2%;
+		/*background: red;*/
+	}
 }
