@@ -8,6 +8,8 @@
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<script src="js/jquery-1.11.2.min.js"></script>
+	<script src="js/formulario.js"></script>
 </head>
 <body>
 	<header>
@@ -20,6 +22,7 @@
 		<figure id="avatar">
 			<img src="avatar.jpg"/>
 		</figure>
+		<p id="username"><strong>User name</strong></p>
 	</header>
 	<nav>
 		<ul>
@@ -31,6 +34,14 @@
 			<li id="pubicar_nav"><a href="#" class="icon-pencil">Publicar</a></li>
 		</ul>	
 	</nav>
+
+	<form id="formulario" >
+		<label> Nuevo Articulo </label>
+		<input type="text" id="titulo" placeholder=" Titulo" required>
+		<input type="text" id="url" placeholder=" Link" required>
+		<input type="submit" value="Aceptar">
+	</form>
+
 	<section id="contenido">
 		<article class="item">
 			<figure class="imagen_item">
