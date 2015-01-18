@@ -1,10 +1,14 @@
 
 
-$( document ).ready(function() {
-	
-});
+$(function () {
+	console.log("Se disparo el evendo DOMContendLoaded");
+})
+
+
  
 $( window ).load(function() {
+	console.log("Se disparo el evento window load");
+
 	var $form=$("#formulario");
 	var $titulo=$("#titulo");
 	var $url=$("#url");
@@ -12,25 +16,29 @@ $( window ).load(function() {
 	var $list=$("#contenido");
 	var $post=$(".item").first();
 
-	$boton_publicar.click(mostrarFormulario);
+	$boton_publicar.click(mostrarOcultarFormulario);
 	$form.on("submit",agregarPost);
 
 	$(".item").slideDown();
 
-
-	function mostrarFormulario(){
+	function mostrarOcultarFormulario(e){
+		e.preventDefault();
+		e.stopPropagation();
 		$form.slideToggle();
-		return false;
+		$list.slideToggle();
+		$boton_publicar.toggleClass(".disabled");
 	}
 
-	function agregarPost () {
+	function agregarPost (e) {
+		e.preventDefault();
+		e.stopPropagation();
 		var url=$url.val();
 		var titulo=$titulo.val();
 		var $clone=$post.clone();
 
-	$clone.find('.titulo_item a')
-		.text(titulo)
-		.attr('href', url);
+		$clone.find('.titulo_item a')
+			.text(titulo)
+			.attr('href', url);
 
 
 		$clone.hide();
@@ -38,8 +46,7 @@ $( window ).load(function() {
 		$list.prepend($clone);
 
 		$clone.show();
-		mostrarFormulario();
-		return false;
+		mostrarOcultarFormulario();
 	}
 });
 

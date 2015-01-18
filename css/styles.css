@@ -182,10 +182,16 @@ nav ul #pubicar_nav a
 	text-shadow: rgba(0,0,0,0.5) 2px 2px 5px;
 }
 
-nav ul #pubicar_nav a:hover{
-	background: #F4502A;
+nav ul #publicar_nav a.disabled {
+	background-color: grey;
+	cursor: default;
+	box-shadow: none;
 }
 
+nav ul #pubicar_nav a:hover{
+	background: #F4502A;
+	box-shadow: 0 0 30px orange;
+}
 
 nav ul #pubicar_nav a:before{
 	padding-right: 0.5em;
@@ -297,6 +303,7 @@ nav ul #pubicar_nav a:before{
 	color: white;
 	border-radius:0 0 15px 0;
 	display: none;
+	overflow: hidden;
 }
 
 #formulario input[type=text],
@@ -323,6 +330,14 @@ nav ul #pubicar_nav a:before{
 	border-color: #F4502A;
 }
 
+#geo{
+	text-align: center;
+	float: right;
+	border: 2px solid white;
+	border-radius: 2px;
+	margin-right: 2em;
+	margin-left: 2em;
+}
 @media screen and (min-width: 800px){
 
 	#contenido{
